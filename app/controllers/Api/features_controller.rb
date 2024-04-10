@@ -9,6 +9,7 @@ class Api::FeaturesController < ApplicationController
       @features = @features.where(magType: params[:mag_type])
     end
     data = []
+    total = @features.count
     @features.each do |feature|
       data.push({
          id: feature.id,
